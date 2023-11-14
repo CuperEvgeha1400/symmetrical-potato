@@ -72,9 +72,9 @@ services:
     container_name: nginx
     restart: unless-stopped
     ports:
-      - "80:80"
+      - 443:443
     volumes:
-      - /nginx.conf:/etc/nginx/conf
+      - /frontend/nginx.conf:/etc/nginx/conf
       - etc-letsencrypt:/etc/letsencrypt
     networks:
       -app
@@ -97,4 +97,3 @@ networks:
   pgdb:
   front_back:
   app:
-    driver: bridge
